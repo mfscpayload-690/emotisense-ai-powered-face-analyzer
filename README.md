@@ -60,8 +60,8 @@
 
 #### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/emotisense.git
-cd emotisense
+git clone https://github.com/mfscpayload-690/emotisense-ai-powered-face-analyzer.git
+cd emotisense-ai-powered-face-analyzer
 ```
 
 #### 2. Run the Application
