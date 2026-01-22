@@ -2,98 +2,128 @@
 
 <div align="center">
 
-![EmotiSense Logo](https://img.shields.io/badge/👁️-EmotiSense-7c3aed?style=for-the-badge)
+![EmotiSense Logo](https://img.shields.io/badge/EmotiSense-7c3aed?style=for-the-badge)
 ![Version](https://img.shields.io/badge/version-2.0-blue?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
 ![Demo](https://img.shields.io/badge/demo-live-brightgreen?style=flat-square)
 
 **Real-time Facial Expression & Eye Tracking with AI-Powered Mood Insights**
 
-[Features](#-features) • [Quick Start](#-quick-start) • [How It Works](#-how-it-works) • [Configuration](#️-configuration)
+[Features](#features) • [Quick Start](#quick-start) • [How It Works](#how-it-works) • [Configuration](#configuration)
 
 </div>
 
 ---
 
-## ✨ Features
+## Features
 
-### 🎭 Expression Detection
-- **7 Emotion Recognition** — Happy, Sad, Angry, Surprised, Fearful, Disgusted, Neutral
-- **Real-time Confidence Scoring** — See detection confidence for each emotion
-- **Visual Progress Bars** — Live visualization of all emotion probabilities
-- **Smooth Transitions** — Animated UI updates as expressions change
+### Expression Detection
+- **7 Emotion Recognition**: Happy, Sad, Angry, Surprised, Fearful, Disgusted, Neutral
+- **Real-time Confidence Scoring**: Detection confidence for each emotion
+- **Visual Progress Bars**: Live visualization of all emotion probabilities
+- **Smooth Transitions**: Animated UI updates as expressions change
 
-### 👁️ Eye Tracking
-- **Blink Rate Monitoring** — Tracks blinks per minute
-- **Gaze Stability Analysis** — Measures how steady your focus is
-- **Eye State Indicators** — Visual feedback for left/right eye open/closed
-- **EAR-based Detection** — Uses Eye Aspect Ratio for accurate tracking
+### Eye Tracking
+- **Blink Rate Monitoring**: Tracks blinks per minute
+- **Gaze Stability Analysis**: Measures focus steadiness
+- **Eye State Indicators**: Visual feedback for left/right eye open/closed states
+- **EAR-based Detection**: Uses Eye Aspect Ratio for accurate tracking
 
-### 🤖 AI-Powered Analysis
-- **Local AI Processing** — Uses Ollama for privacy-first analysis
-- **Contextual Insights** — Understands emotion + eye data together
-- **Natural Language Feedback** — Conversational mood assessments
-- **No Cloud Required** — Everything runs on your machine
+### AI-Powered Analysis
+- **Local AI Processing**: Uses Ollama for privacy-first analysis
+- **Contextual Insights**: Understands emotion and eye data together
+- **Natural Language Feedback**: Conversational mood assessments
+- **No Cloud Required**: All processing runs on your local machine
 
-### ⚡ Sudden Change Alerts
-- **Rapid Emotion Detection** — Catches sudden shifts in expression
-- **Alert Logging** — Keeps history of detected changes
-- **Visual Notifications** — Animated banner alerts
-- **Timestamped Events** — Track when changes occurred
+### Sudden Change Alerts
+- **Rapid Emotion Detection**: Catches sudden shifts in expression
+- **Alert Logging**: Maintains history of detected changes
+- **Visual Notifications**: Animated banner alerts
+- **Timestamped Events**: Tracks when changes occurred
 
-### 📊 Session Analytics
-- **Duration Tracking** — Monitor session length
-- **Emotion Change Counter** — Track expression transitions
-- **Dominant Emotion** — See your most common expression
-- **Snapshot Capture** — Save moments with one click
+### Session Analytics
+- **Duration Tracking**: Monitor session length
+- **Emotion Change Counter**: Track expression transitions
+- **Dominant Emotion**: Identifies your most common expression
+- **Snapshot Capture**: Save moments with one click
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
-- Modern web browser (Chrome, Firefox, Edge)
-- Webcam access
-- (Optional) [Ollama](https://ollama.ai/) for AI analysis
+- Modern web browser (Chrome, Firefox, or Edge)
+- Webcam with access permissions
+- (Optional) [Ollama](https://ollama.ai/) for AI-powered analysis
 
-### Installation
+### Installation Steps
 
+#### 1. Clone the Repository
 ```bash
-# Clone the repository
 git clone https://github.com/yourusername/emotisense.git
 cd emotisense
-
-# Open in browser
-start index.html  # Windows
-open index.html   # macOS
-xdg-open index.html  # Linux
 ```
 
-### With Local Server (Recommended)
+#### 2. Run the Application
+
+**Option A: Direct File Access** (Basic)
 ```bash
+# Windows
+start index.html
+
+# macOS
+open index.html
+
+# Linux
+xdg-open index.html
+```
+
+**Option B: Local Development Server** (Recommended)
+
+Running via a local server ensures all features work correctly and prevents CORS issues:
+
+```bash
+# Using npx (requires Node.js)
 npx http-server . -p 8080
-# Then open http://localhost:8080
+
+# Then navigate to http://localhost:8080 in your browser
 ```
 
-### Enable AI Analysis (Optional)
+Alternatively, you can use Python's built-in server:
+
 ```bash
-# Install Ollama from https://ollama.ai
-ollama run qwen2.5-coder:7b-instruct-q4_K_M
+# Python 3.x
+python -m http.server 8080
+
+# Then navigate to http://localhost:8080 in your browser
 ```
 
+#### 3. Enable AI Analysis (Optional)
+
+For advanced AI-powered mood insights:
+
+1. **Install Ollama**: Download and install from [https://ollama.ai](https://ollama.ai/)
+2. **Pull the Required Model**:
+   ```bash
+   ollama run qwen2.5-coder:7b-instruct-q4_K_M
+   ```
+3. **Verify Ollama is Running**: The application will automatically connect to `http://localhost:11434`
+
+**Note**: AI analysis is optional. The application will function without it, providing expression and eye tracking features.
+
 ---
 
-## 🎯 How It Works
+## How It Works
 
-1. **Start Analysis** — Click the button and allow camera access
-2. **Face Detection** — AI models detect your face and 68 facial landmarks
-3. **Expression Analysis** — Neural network classifies your expression
-4. **Eye Tracking** — Landmarks track eye openness and gaze
-5. **AI Insights** — Local LLM provides contextual mood analysis
+1. **Start Analysis**: Click the start button and grant camera access permissions
+2. **Face Detection**: AI models detect your face and 68 facial landmarks
+3. **Expression Analysis**: Neural network classifies your expression in real-time
+4. **Eye Tracking**: Facial landmarks track eye openness and gaze stability
+5. **AI Insights**: Local LLM provides contextual mood analysis (if Ollama is configured)
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 | Component | Technology |
 |-----------|------------|
@@ -106,20 +136,22 @@ ollama run qwen2.5-coder:7b-instruct-q4_K_M
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
-Modify these constants in `index.html`:
+You can customize the application by modifying the following constants in `index.html`:
 
 ```javascript
 // AI Settings
-const OLLAMA_URL = 'http://localhost:11434';  // Ollama endpoint
-const MODEL = 'qwen2.5-coder:7b-instruct-q4_K_M';  // Model name
-const AI_INTERVAL = 3000;  // Analysis frequency (ms)
+const OLLAMA_URL = 'http://localhost:11434';  // Ollama endpoint URL
+const MODEL = 'qwen2.5-coder:7b-instruct-q4_K_M';  // LLM model name
+const AI_INTERVAL = 3000;  // Analysis frequency in milliseconds
 ```
+
+Adjust these values based on your Ollama setup and performance requirements.
 
 ---
 
-## 📊 Metrics Explained
+## Metrics Explained
 
 | Metric | Description | Normal Range |
 |--------|-------------|--------------|
@@ -130,31 +162,31 @@ const AI_INTERVAL = 3000;  // Analysis frequency (ms)
 
 ---
 
-## 🎨 UI Features
+## UI Features
 
-- **Glassmorphism Design** — Modern frosted glass effects
-- **Dark Theme** — Easy on the eyes
-- **Responsive Layout** — Works on desktop and tablet
-- **Smooth Animations** — Polished micro-interactions
-- **Gradient Accents** — Violet to pink color scheme
-
----
-
-## ⚠️ Disclaimer
-
-> **Demo Only** — Expression detection is approximate and varies by individual, lighting, and camera quality. This tool is NOT for clinical, diagnostic, or assessment purposes. All processing happens locally — no data is sent to external servers.
+- **Glassmorphism Design**: Modern frosted glass effects
+- **Dark Theme**: Easy on the eyes for extended use
+- **Responsive Layout**: Optimized for desktop and tablet devices
+- **Smooth Animations**: Polished micro-interactions
+- **Gradient Accents**: Violet to pink color scheme
 
 ---
 
-## 📄 License
+## Disclaimer
 
-MIT License — See [LICENSE](LICENSE) for details.
+> **For Demonstration Purposes Only**: Expression detection is approximate and may vary based on individual characteristics, lighting conditions, and camera quality. This tool is NOT intended for clinical, diagnostic, or professional assessment purposes. All processing occurs locally on your machine; no data is transmitted to external servers.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
 <div align="center">
 
-**Made with ❤️ for the open-source community**
+**Developed for the open-source community**
 
 [Report Bug](../../issues) • [Request Feature](../../issues)
 
